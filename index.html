@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QR Studio</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <h1>QR Studio</h1>
+        <p>Create QR codes instantly</p>
+
+        <div class="card">
+
+            <label for="text">Enter URL or Text</label>
+
+            <textarea
+                id="text"
+                placeholder="https://example.com"
+            ></textarea>
+
+            <button onclick="generateQR()">
+                Generate QR
+            </button>
+
+            <div id="qrcode"></div>
+
+            <button id="downloadBtn" onclick="downloadQR()" hidden>
+                Download QR
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
