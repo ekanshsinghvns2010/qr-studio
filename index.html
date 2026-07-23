@@ -11,33 +11,100 @@
 
 <body>
 
-    <div class="app">
+    <main class="app">
 
-        <h1>QR Studio</h1>
-        <p>Create QR codes instantly</p>
+        <header class="header">
+            <div class="logo">QR</div>
 
-        <div class="card">
+            <div>
+                <h1>QR Studio</h1>
+                <p>Create QR codes instantly</p>
+            </div>
+        </header>
 
-            <label for="text">Enter URL or Text</label>
+
+        <section class="card">
+
+            <div class="tabs">
+
+                <button
+                    id="urlTab"
+                    class="tab active"
+                    onclick="setType('url')">
+                    🔗 URL
+                </button>
+
+                <button
+                    id="textTab"
+                    class="tab"
+                    onclick="setType('text')">
+                    📝 Text
+                </button>
+
+            </div>
+
+
+            <label id="inputLabel">
+                Enter your URL
+            </label>
 
             <textarea
                 id="text"
-                placeholder="https://example.com"
-            ></textarea>
+                placeholder="https://example.com">
+            </textarea>
 
-            <button onclick="generateQR()">
-                Generate QR
-            </button>
 
-            <div id="qrcode"></div>
+            <div class="actions">
 
-            <button id="downloadBtn" onclick="downloadQR()" hidden>
-                Download QR
-            </button>
+                <button
+                    class="primary"
+                    onclick="generateQR()">
+                    Generate QR
+                </button>
 
-        </div>
+                <button
+                    class="secondary"
+                    onclick="clearQR()">
+                    Clear
+                </button>
 
-    </div>
+            </div>
+
+
+            <div
+                id="qrcode"
+                class="qr-container">
+            </div>
+
+
+            <div
+                id="qrActions"
+                class="qr-actions"
+                hidden>
+
+                <button
+                    class="secondary"
+                    onclick="downloadQR()">
+                    📥 Download
+                </button>
+
+                <button
+                    class="primary"
+                    onclick="shareQR()">
+                    📤 Share
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            <p>QR Studio • Simple & Fast</p>
+        </footer>
+
+    </main>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
